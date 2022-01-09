@@ -20,7 +20,9 @@ import java.util.Scanner;
                     case 2:
                         editPerson();
                         break;
-
+                    case 3:
+                        addressBook.list.remove(deletePerson());
+                        break;
                     default:
                         isAdd = false;
                 }
@@ -30,7 +32,7 @@ import java.util.Scanner;
             }
         }
 
-        private static Person addPerson(){
+        private static  Person addPerson(){
             System.out.println("Enter First name");
             String fname = scanner.next();
 
@@ -59,6 +61,18 @@ import java.util.Scanner;
 
                 }
             }
+        }
+        private static Person deletePerson(){
+            System.out.println("Enter First name");
+            String fname = scanner.next();
+
+            System.out.println("Enter Last name");
+            String lname = scanner.next();
+
+            System.out.println("Enter address");
+            String address = scanner.next();
+            Person person = new Person(fname, lname, address);
+            return person;
         }
         private static void display(Person person) {
             System.out.println("Name : " + person.getName());
