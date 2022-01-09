@@ -17,7 +17,10 @@ import java.util.Scanner;
                         //list.add(person);
                         addressBook.list.add(addPerson());
                         break;
-                    
+                    case 2:
+                        editPerson();
+                        break;
+
                     default:
                         isAdd = false;
                 }
@@ -39,7 +42,24 @@ import java.util.Scanner;
             Person person = new Person(fname, lname, address);
             return person;
         }
+        public static void editPerson() {
+            System.out.println("Enter First name to edit ");
+            String name = scanner.next();
+            for (Person person : list) {
+                if (name .equalsIgnoreCase(person.getName())) {
+                    System.out.println("Enter First name : ");
+                    String fname = scanner.next();
+                    System.out.println("Enter last Name");
+                    String lname = scanner.next();
+                    System.out.println("Enter address");
+                    String address = scanner.next();
+                    person.setName(fname);
+                    person.setLname(lname);
+                    person.setAddress(address);
 
+                }
+            }
+        }
         private static void display(Person person) {
             System.out.println("Name : " + person.getName());
             System.out.println("Email : " + person.getLname());
