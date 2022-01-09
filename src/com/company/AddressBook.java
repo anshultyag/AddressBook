@@ -16,6 +16,13 @@ import java.util.Scanner;
                         //  Person person = AddressBook.addPerson();
                         //list.add(person);
                         addressBook.list.add(addPerson());
+                        System.out.println("Want to add more people ?");
+                        System.out.println("Please enter 1 else enter 0");
+                        int num = scanner.nextInt();
+                        if(num == 1)
+                            isAdd = true;
+                        else
+                            isAdd = false;
                         break;
                     case 2:
                         editPerson();
