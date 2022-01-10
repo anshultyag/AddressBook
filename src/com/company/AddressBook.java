@@ -2,35 +2,35 @@ package com.company;
 import java.util.ArrayList;
 import java.util.Scanner;
     class AddressBook {
-        private static ArrayList<Person> list = new ArrayList<>();
+        private static ArrayList<Person> list = new ArrayList<Person>();
         private static Scanner scanner = new Scanner(System.in);
 
         public static void main(String args[]) {
-            AddressBook addressBook= new AddressBook();
             boolean isAdd = true;
             while (isAdd) {
-                System.out.println("Press 1 for add contact :\n" + "Press 2 for edit contact :\n" + "Press 3 For Remove Contact :\n" + "Press 4 For Exit :");
+                System.out.println("Press 1 for add contact :");
+                System.out.println("Press 2 for Display contact :");
+                System.out.println("Press 3 for Edit contact : ");
+                System.out.println("Press 0 for Exit contact : ");
                 int choice = scanner.nextInt();
                 switch (choice) {
                     case 1:
-                        //  Person person = AddressBook.addPerson();
-                        //list.add(person);
-                        addressBook.list.add(addPerson());
+                        addPerson();
                         break;
                     case 2:
+                        displayPerson();
+                        break;
+                    case 3:
                         editPerson();
                         break;
-
                     default:
                         isAdd = false;
                 }
             }
-            for (int i = 0; i < list.size(); i++) {
-                AddressBook.display(list.get(i));
-            }
-        }
 
-        private static Person addPerson(){
+       }
+
+        public static void addPerson() {
             System.out.println("Enter First name");
             String fname = scanner.next();
 
@@ -39,31 +39,32 @@ import java.util.Scanner;
 
             System.out.println("Enter address");
             String address = scanner.next();
-            Person person = new Person(fname, lname, address);
-            return person;
+            list.add(new Person(fname, lname, address));
+
+        }
+
+        public static void displayPerson() {
+            System.out.println("___________________________________");
+            System.out.println("List is :  " + list);
+
         }
         public static void editPerson() {
-            System.out.println("Enter First name to edit ");
-            String name = scanner.next();
-            for (Person person : list) {
-                if (name .equalsIgnoreCase(person.getName())) {
-                    System.out.println("Enter First name : ");
-                    String fname = scanner.next();
-                    System.out.println("Enter last Name");
-                    String lname = scanner.next();
-                    System.out.println("Enter address");
-                    String address = scanner.next();
-                    person.setName(fname);
-                    person.setLname(lname);
-                    person.setAddress(address);
-
-                }
-            }
+           System.out.println("Please enter your first name");
+           String personName = scanner.next();
+           System.out.println("___________________________________");
+           for (int i = 0; i < list.size(); i++){
+               if (list.get(i).getName().equals(personName)){
+                   System.out.println("Please Enter first Name");
+                   String fname = scanner.next();
+                   System.out.println("Enter last Name");
+                   String lname = scanner.next();
+                   System.out.println("Enter address");
+                   String address = scanner.next();
+                   list.get(i).setName(fname);
+                   list.get(i).setLname(lname);
+                   list.get(i).setAddress(address);
+               }
+           }
         }
-        private static void display(Person person) {
-            System.out.println("Name : " + person.getName());
-            System.out.println("Email : " + person.getLname());
-            System.out.println("Address : " + person.getAddress());
-            System.out.println("-----------------------------------------------------");
-        }
+        
     }
