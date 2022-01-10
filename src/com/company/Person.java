@@ -1,17 +1,9 @@
-package com.company;
-
 public class Person {
     private String fname;
     private String lname;
     private String address;
 
-    public Person() {
-        this.fname = fname;
-        this.lname = lname;
-        this.address = address;
-    }
-
-    public Person(String fname, String lname, String address) {
+     Person(String fname, String lname, String address) {
         this.fname = fname;
         this.lname = lname;
         this.address = address;
@@ -37,5 +29,9 @@ public class Person {
     }
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String toString(){
+        return fname +" " + lname + " " +  address;
     }
 }
