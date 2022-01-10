@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 package com.company;
 import java .util.*;
 
+=======
+>>>>>>> d5fc14c7488d6cd952181e1ac470f73fd41be706
 public class Person {
     private String fname;
     private String lname;
@@ -37,4 +40,8 @@ public class Person {
     public String toString(){
         return fname +" " + lname + " " +  address;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> d5fc14c7488d6cd952181e1ac470f73fd41be706
