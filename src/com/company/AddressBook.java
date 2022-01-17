@@ -10,13 +10,9 @@ import java.util.Scanner;
             while (isAdd) {
                 System.out.println("Press 1 for add contact :");
                 System.out.println("Press 2 for Display contact :");
-<<<<<<< HEAD
-                System.out.println("Press 0 for Exit contact : ");
-=======
                 System.out.println("Press 3 for Edit contact : ");
                 System.out.println("Press 4 for Remove Contact: ");
                 System.out.println("Press 5 for Exit contact : ");
->>>>>>> d5fc14c7488d6cd952181e1ac470f73fd41be706
                 int choice = scanner.nextInt();
                 switch (choice) {
                     case 1:
@@ -24,15 +20,12 @@ import java.util.Scanner;
                         break;
                     case 2:
                         displayPerson();
-<<<<<<< HEAD
-=======
                         break;
                     case 3:
                         editPerson();
                         break;
                     case 4:
                         deletePerson();
->>>>>>> d5fc14c7488d6cd952181e1ac470f73fd41be706
                         break;
                     default:
                         isAdd = false;
@@ -49,11 +42,8 @@ import java.util.Scanner;
             String lname = scanner.nextLine();
 
             System.out.println("Enter address");
-<<<<<<< HEAD
             String address = scanner.nextLine();
-=======
             String address = scanner.next();
->>>>>>> d5fc14c7488d6cd952181e1ac470f73fd41be706
             list.add(new Person(fname, lname, address));
 
         }
@@ -61,12 +51,8 @@ import java.util.Scanner;
         public static void displayPerson() {
             System.out.println("___________________________________");
             System.out.println("List is :  " + list);
-<<<<<<< HEAD
-
         }
    }
-=======
-         
         }
         public static void editPerson() {
            System.out.println("Please enter your first name");
@@ -100,4 +86,3 @@ import java.util.Scanner;
             }
         }
     }
->>>>>>> d5fc14c7488d6cd952181e1ac470f73fd41be706
