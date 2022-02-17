@@ -1,5 +1,5 @@
 package com.company;
-import java .util.*;
+import java.util.*;
 
 public class Person {
     private String fname;
@@ -37,5 +37,4 @@ public class Person {
     public String toString(){
         return fname +" " + lname + " " +  address;
     }
-
 }
