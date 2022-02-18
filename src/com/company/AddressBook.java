@@ -8,8 +8,8 @@ class AddressBook {
         while (isAdd) {
             System.out.println("Enter \n 1. Add new AddressBook\n 2. Add contact in AddressBook\n " +
                     "3. Edit the contact in AddressBook\n 4. Delete the contact in AddressBook\n "+
-                    "5. Delete the AddressBook\n 6. Print the AddressBook\n 7. Print the contacts in AddressBook\n"+
-                    "0.exit");
+                    "5. Delete the AddressBook\n 6. Search Contact By City and State in AddressBook\n "+
+                    "7. Print the AddressBook\n 8. Print the contacts in AddressBook\n 0.exit");
             int choice = scanner.nextInt();
             switch (choice) {
                 case 1:
@@ -28,9 +28,12 @@ class AddressBook {
                     multiAddressBook.deleteAddressBook();
                     break;
                 case 6:
-                    multiAddressBook.printBook();
+                    multiAddressBook.searchContacts();
                     break;
                 case 7:
+                    multiAddressBook.printBook();
+                    break;
+                case 8:
                     multiAddressBook.printContactsInBook();
                     break;
                 case 0:

@@ -52,6 +52,7 @@ public class Person {
     public String getCity() {
         return city;
     }
+
     public void setCity(String city) {
         this.city = city;
     }
@@ -59,6 +60,7 @@ public class Person {
     public int getZipCode() {
         return zipCode;
     }
+
     public void setZipCode(int zipCode) {
         this.zipCode = zipCode;
     }
@@ -66,6 +68,7 @@ public class Person {
     public long getMobileNumber() {
         return mobileNumber;
     }
+
     public void setMobileNumber(long mobileNumber) {
         this.state = state;
     }
@@ -73,6 +76,7 @@ public class Person {
     public String getState() {
         return state;
     }
+
     public void setState(String state) {
         this.state = state;
     }
@@ -80,9 +84,11 @@ public class Person {
     public String getEmailId() {
         return emailId;
     }
+
     public void setEmailId(String emailId) {
         this.emailId = emailId;
     }
+
     @Override
     public String toString() {
         return firstName + " " + lname + " " + address + " " + city + " " + state + " " + zipCode + " " + mobileNumber + "  " + emailId;

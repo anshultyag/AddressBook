@@ -1,7 +1,9 @@
 package com.company;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class MultipleAddressBooks {
     Scanner scanner = new Scanner(System.in);
@@ -71,6 +73,53 @@ public class MultipleAddressBooks {
         } else {
             System.out.println("AddressBook doesn't exist!!");
             deleteContactInBook();
+        }
+    }
+    //search contacts using city or state name
+    public void searchContacts() {
+        while (true) {
+            System.out.println("Enter\n 1. By city\n 2. By state\n 0. for previous menu");
+            int choice = scanner.nextInt();
+            scanner.nextLine();
+            switch (choice) {
+                case 1:
+                    System.out.println("Enter city: ");
+                    String city = scanner.nextLine();
+                    searchByCity(city);
+                    break;
+                case 2:
+                    System.out.println("Enter state: ");
+                    String state = scanner.nextLine();
+                    searchByState(state);
+                    break;
+                case 0:
+                    return;
+                default:
+                    System.out.println("Entered choice is incorrect!.. please enter correct choice");
+            }
+        }
+    }
+
+    //search contact by state name
+    public void searchByState(String state) {
+        for (Map.Entry<String, Contact> entry : contactService.entrySet()) {
+            List<Person> contactListByState = entry.getValue().contactList;
+            List<Person> collect = contactListByState.stream().filter(p -> p.getState().equalsIgnoreCase(state)).collect(Collectors.toList());
+            for (Person contactsss : collect) {
+                System.out.println("Search result: " + contactsss);
+            }
+        }
+        System.out.println(" ");
+    }
+
+    //search contact by city name
+    public void searchByCity(String city) {
+        for (Map.Entry<String, Contact> entry : contactService.entrySet()) {
+            List<Person> contactListByCity = entry.getValue().contactList;
+            List<Person> collect = contactListByCity.stream().filter(p -> p.getCity().equalsIgnoreCase(city)).collect(Collectors.toList());
+            for (Person contact : collect) {
+                System.out.println("Search result: " + contact);
+            }
         }
     }
 
