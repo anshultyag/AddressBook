@@ -1,11 +1,7 @@
-<<<<<<< HEAD
 package com.company;
-import java .util.*;
 
-=======
->>>>>>> d5fc14c7488d6cd952181e1ac470f73fd41be706
 public class Person {
-    private String fname;
+    private String firstName;
     private String lname;
     private String address;
     private String city;
@@ -14,14 +10,8 @@ public class Person {
     private long mobileNumber;
     private String emailId;
 
-<<<<<<< HEAD
-     Person(String fname, String lname, String address) {
-        this.fname = fname;
-        this.lname = lname;
-        this.address = address;
-=======
-    Person(String fname, String lname, String address, String city, String state, int zipCode, long mobileNumber, String emailId) {
-        this.fname = fname;
+    Person(String firstName, String lname, String address, String city, String state, int zipCode, long mobileNumber, String emailId) {
+        this.firstName = firstName;
         this.lname = lname;
         this.address = address;
         this.city = city;
@@ -33,15 +23,14 @@ public class Person {
 
     public Person() {
 
->>>>>>> Uc_05_create_multiple_addressbook
     }
 
-    public String getName() {
-        return fname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.fname = fname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLname() {
@@ -60,16 +49,6 @@ public class Person {
         this.address = address;
     }
 
-<<<<<<< HEAD
-    public String toString(){
-        return fname +" " + lname + " " +  address;
-    }
-<<<<<<< HEAD
-}
-=======
-}
->>>>>>> d5fc14c7488d6cd952181e1ac470f73fd41be706
-=======
     public String getCity() {
         return city;
     }
@@ -106,7 +85,6 @@ public class Person {
     }
     @Override
     public String toString() {
-            return fname + " " + lname + " " + address + " " + city + " " + state + " " + zipCode + " " + mobileNumber + "  " + emailId;
-        }
+        return firstName + " " + lname + " " + address + " " + city + " " + state + " " + zipCode + " " + mobileNumber + "  " + emailId;
+    }
 }
->>>>>>> Uc_05_create_multiple_addressbook
