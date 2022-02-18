@@ -123,6 +123,51 @@ public class MultipleAddressBooks {
         }
     }
 
+    //count number of contacts in all address books using city or state name
+    public void countContacts() {
+        while (true) {
+            System.out.println("Enter\n 1. By city\n 2. By state\n 0. for previous menu");
+            int choice = scanner.nextInt();
+            scanner.nextLine();
+            switch (choice) {
+                case 1:
+                    System.out.println("Enter city: ");
+                    String city = scanner.nextLine();
+                    countByCity(city);
+                    break;
+                case 2:
+                    System.out.println("Enter state: ");
+                    String state = scanner.nextLine();
+                    countByState(state);
+                    break;
+                case 0:
+                    return;
+                default:
+                    System.out.println("Entered choice is incorrect!.. please enter correct choice");
+            }
+        }
+    }
+
+    //count contact by city name
+    public void countByCity(String cityName) {
+        for (Map.Entry<String, Contact> entry : contactService.entrySet()) {
+            System.out.println("The contacts in the Book of < " + entry.getKey() + " > are!...");
+            List<Person> contactListByCity = entry.getValue().contactList;
+            long countContactsByCity = contactListByCity.stream().filter(g -> g.getCity().equalsIgnoreCase(cityName)).count();
+            System.out.println("Total Number of Contact from '" + cityName + "' city is " + countContactsByCity);
+        }
+    }
+
+    //count contact by state name
+    public void countByState(String stateName) {
+        for (Map.Entry<String, Contact> entry : contactService.entrySet()) {
+            System.out.println("The contacts in the Book of < " + entry.getKey() + " > are!...");
+            List<Person> contactListByState = entry.getValue().contactList;
+            long countContactsByState = contactListByState.stream().filter(g -> g.getState().equalsIgnoreCase(stateName)).count();
+            System.out.println("Total Number of Contact from '" + stateName + "' state is" + countContactsByState);
+        }
+    }
+
     //print name of address books
     public void printBook() {
         System.out.println("Address Book Programs are: ");
